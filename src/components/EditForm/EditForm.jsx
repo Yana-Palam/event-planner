@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation, useParams } from "react-router-dom";
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import InputSelect from "../InputSelect/InputSelect";
 import * as Yup from "yup";
 import axios from "axios";
 import useMatchMedia from "../../hooks/useMatchMedia";
@@ -26,14 +27,18 @@ function EditForm() {
 
   const fetchEvent = async (id) => {
     setIsLoading(true);
-    const { data } = await axios.get(id);
-    setEventDetails(data);
+    try {
+      const { data } = await axios.get(id);
+      setEventDetails(data);
+    } catch (error) {
+      navigate(location?.state?.from ?? "/");
+    }
+
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchEvent(eventId);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -64,10 +69,15 @@ function EditForm() {
   });
 
   const handleSubmit = async (values, { resetForm }) => {
+    console.log(values);
     const event = { ...values, id: eventDetails.id };
-    await axios.put(`/${event.id}`, event);
-    // dispatch(editeEvent({ ...values, id: eventDetails.id }));
-    resetForm();
+    try {
+      await axios.put(`/${event.id}`, event);
+      resetForm();
+    } catch (error) {
+      navigate(location?.state?.from ?? "/");
+    }
+
     navigate(location?.state?.from ?? "/");
   };
 
@@ -114,13 +124,17 @@ function EditForm() {
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="category">Category</Label>
-                  <Input placeholder="Input" component="select" name="category">
-                    {categories.map((item, index) => (
-                      <option key={index} value={item}>
-                        {item}
-                      </option>
-                    ))}
-                  </Input>
+                  <Field name="category">
+                    {({ field, form, meta }) => (
+                      <InputSelect
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Category"}
+                        options={categories}
+                      />
+                    )}
+                  </Field>
                   <FormError name="category" />
                 </Wrapper>
                 <Wrapper>
@@ -130,14 +144,18 @@ function EditForm() {
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="priority">Priority</Label>
-                  <Input placeholder="Input" component="select" name="priority">
-                    {priorities.map((item, index) => (
-                      <option key={index} value={item.value}>
-                        {item.valueName}
-                      </option>
-                    ))}
-                  </Input>
-                  <FormError name="category" />
+                  <Field name="priority">
+                    {({ field, form, meta }) => (
+                      <InputSelect
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Priority"}
+                        options={priorities}
+                      />
+                    )}
+                  </Field>
+                  <FormError name="priority" />
                 </Wrapper>
               </>
             )}
@@ -146,12 +164,13 @@ function EditForm() {
                 <div>
                   <Wrapper>
                     <Label htmlFor="title">Title</Label>
-                    <Input placeholder="Input" name="title" />
+                    <Input id="title" placeholder="Input" name="title" />
                     <FormError name="title" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="description">Description</Label>
                     <Textarea
+                      id="description"
                       placeholder="Input"
                       component="textarea"
                       name="description"
@@ -160,55 +179,58 @@ function EditForm() {
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="date">Input date</Label>
-                    <Input placeholder="Input" name="date" />
+                    <Input id="date" placeholder="Input" name="date" />
                     <FormError name="date" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="time">Input time</Label>
-                    <Input placeholder="Input" name="time" />
+                    <Input id="time" placeholder="Input" name="time" />
                     <FormError name="time" />
                   </Wrapper>
                 </div>
                 <div>
                   <Wrapper>
                     <Label htmlFor="location">Location</Label>
-                    <Input placeholder="Input" name="location" />
+                    <Input id="location" placeholder="Input" name="location" />
                     <FormError name="location" />
                   </Wrapper>
+
                   <Wrapper>
                     <Label htmlFor="category">Category</Label>
-                    <Input
-                      placeholder="Input"
-                      component="select"
-                      name="category"
-                    >
-                      {categories.map((item, index) => (
-                        <option key={index} value={item}>
-                          {item}
-                        </option>
-                      ))}
-                    </Input>
+                    <Field id="category" name="category">
+                      {({ field, form, meta }) => (
+                        <InputSelect
+                          field={field}
+                          form={form}
+                          meta={meta}
+                          label={"Category"}
+                          options={categories}
+                        />
+                      )}
+                    </Field>
                     <FormError name="category" />
                   </Wrapper>
+
                   <Wrapper>
                     <Label htmlFor="picture">Add picture</Label>
-                    <Input placeholder="Input" name="picture" />
+                    <Input id="picture" placeholder="Input" name="picture" />
                     <FormError name="picture" />
                   </Wrapper>
+
                   <Wrapper>
                     <Label htmlFor="priority">Priority</Label>
-                    <Input
-                      placeholder="Input"
-                      component="select"
-                      name="priority"
-                    >
-                      {priorities.map((item, index) => (
-                        <option key={index} value={item.value}>
-                          {item.valueName}
-                        </option>
-                      ))}
-                    </Input>
-                    <FormError name="category" />
+                    <Field id="priority" name="priority">
+                      {({ field, form, meta }) => (
+                        <InputSelect
+                          field={field}
+                          form={form}
+                          meta={meta}
+                          label={"Priority"}
+                          options={priorities}
+                        />
+                      )}
+                    </Field>
+                    <FormError name="priority" />
                   </Wrapper>
                 </div>
               </>
@@ -219,12 +241,13 @@ function EditForm() {
                 <div>
                   <Wrapper>
                     <Label htmlFor="title">Title</Label>
-                    <Input placeholder="Input" name="title" />
+                    <Input id="title" placeholder="Input" name="title" />
                     <FormError name="title" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="description">Description</Label>
                     <Textarea
+                      id="description"
                       placeholder="Input"
                       component="textarea"
                       name="description"
@@ -235,61 +258,62 @@ function EditForm() {
                 <div>
                   <Wrapper>
                     <Label htmlFor="date">Input date</Label>
-                    <Input placeholder="Input" name="date" />
+                    <Input id="date" placeholder="Input" name="date" />
                     <FormError name="date" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="time">Input time</Label>
-                    <Input placeholder="Input" name="time" />
+                    <Input id="time" placeholder="Input" name="time" />
                     <FormError name="time" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="location">Location</Label>
-                    <Input placeholder="Input" name="location" />
+                    <Input id="location" placeholder="Input" name="location" />
                     <FormError name="location" />
                   </Wrapper>
                 </div>
                 <div>
                   <Wrapper>
                     <Label htmlFor="category">Category</Label>
-                    <Input
-                      placeholder="Input"
-                      component="select"
-                      name="category"
-                    >
-                      {categories.map((item, index) => (
-                        <option key={index} value={item}>
-                          {item}
-                        </option>
-                      ))}
-                    </Input>
+                    <Field id="category" name="category">
+                      {({ field, form, meta }) => (
+                        <InputSelect
+                          field={field}
+                          form={form}
+                          meta={meta}
+                          label={"Category"}
+                          options={categories}
+                          s
+                        />
+                      )}
+                    </Field>
                     <FormError name="category" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="picture">Add picture</Label>
-                    <Input placeholder="Input" name="picture" />
+                    <Input id="picture" placeholder="Input" name="picture" />
                     <FormError name="picture" />
                   </Wrapper>
                   <Wrapper>
                     <Label htmlFor="priority">Priority</Label>
-                    <Input
-                      placeholder="Input"
-                      component="select"
-                      name="priority"
-                    >
-                      {priorities.map((item, index) => (
-                        <option key={index} value={item.value}>
-                          {item.valueName}
-                        </option>
-                      ))}
-                    </Input>
-                    <FormError name="category" />
+                    <Field id="priority" name="priority">
+                      {({ field, form, meta }) => (
+                        <InputSelect
+                          field={field}
+                          form={form}
+                          meta={meta}
+                          label={"Priority"}
+                          options={priorities}
+                        />
+                      )}
+                    </Field>
+                    <FormError name="priority" />
                   </Wrapper>
                 </div>
               </>
             )}
 
-            <Btn type="submit">Save</Btn>
+            <Btn type="submit">Add event</Btn>
           </StyledForm>
         </Form>
       </Formik>

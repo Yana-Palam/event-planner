@@ -63,17 +63,17 @@ function Filter() {
 
       {isOpen && (
         <List>
-          {categories.map((item, index) => {
-            const select = filter === item;
+          {categories.map(({ value, valueName }, index) => {
+            const select = filter === value;
             return (
               <Item
                 $select={select}
                 onClick={() => {
-                  onSelect(item);
+                  onSelect(value);
                 }}
                 key={index}
               >
-                <p> {item}</p>
+                <p> {valueName}</p>
               </Item>
             );
           })}

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Field } from "formik";
 import { device } from "../../utils/device";
-import { ChevronSmallDown } from "react-swm-icon-pack";
 
 export const StyledForm = styled.div`
   position: relative;
@@ -41,6 +40,7 @@ export const Input = styled(Field)`
   outline: none;
   border-radius: ${(p) => p.theme.radii.md};
   border: ${(p) => p.theme.borders.thin} ${(p) => p.theme.colors.form.border};
+  border-color: ${(p) => p.$error && p.theme.colors.form.error};
   color: ${(p) => p.theme.colors.form.input};
   font-size: ${(p) => p.theme.fontSizes.s};
   font-family: inherit;
@@ -64,20 +64,6 @@ export const Input = styled(Field)`
 export const Textarea = styled(Input)`
   resize: none;
   min-height: 156px;
-`;
-
-export const Select = styled(Input)`
-  /* position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 24px;
-    width: 24px;
-    color: red;
-    /* background-image: url(${ChevronSmallDown}); 
-  } */
 `;
 
 export const ErrorText = styled.p`

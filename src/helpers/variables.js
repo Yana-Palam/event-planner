@@ -1,11 +1,11 @@
 export const categories = [
-  "Art",
-  "Music",
-  "Business",
-  "Conference",
-  "Workshop",
-  "Party",
-  "Sport",
+  { valueName: "Art", value: "Art" },
+  { valueName: "Music", value: "Music" },
+  { valueName: "Business", value: "Business" },
+  { valueName: "Conference", value: "Conference" },
+  { valueName: "Workshop", value: "Workshop" },
+  { valueName: "Party", value: "Party" },
+  { valueName: "Sport", value: "Sport" },
 ];
 
 export const priorities = [

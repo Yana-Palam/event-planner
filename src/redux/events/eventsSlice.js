@@ -1,14 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  fetchEvents,
-  addEvent,
-  removeEvent,
-  editeEvent,
-} from "./eventsOperations";
+import { fetchEvents, addEvent, removeEvent } from "./eventsOperations";
 
 const initialState = {
   items: [],
-
   isLoading: false,
   error: null,
 };
@@ -62,4 +56,4 @@ export const eventsSlice = createSlice({
   },
 });
 
-export default eventsSlice.reducer;
+export const eventsReducer = eventsSlice.reducer;

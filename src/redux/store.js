@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import eventsReducer from "./events/eventsSlice.js";
+import { eventsReducer } from "./events/eventsSlice.js";
 import { searchReducer } from "./search/searchSlice.js";
 import { sortReducer } from "./sort/sortSlice.js";
 import { filterReducer } from "./filter/filterSlice.js";

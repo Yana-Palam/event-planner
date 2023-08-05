@@ -22,7 +22,9 @@ function HomePage() {
   const filterValue = useSelector(selectFilterValue);
 
   const fetchData = async () => {
-    dispatch(fetchEvents());
+    if (!events.length) {
+      dispatch(fetchEvents());
+    }
   };
 
   useEffect(() => {

@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import useMatchMedia from "../../hooks/useMatchMedia";
 import { useDispatch } from "react-redux";
 import { addEvent } from "../../redux/events/eventsOperations";
+import InputSelect from "../InputSelect/InputSelect";
+// import { CrossSmall } from "react-swm-icon-pack";
 import {
   StyledForm,
   Input,
@@ -15,22 +17,7 @@ import {
   ErrorText,
 } from "./CreateForm.styled";
 import { categories, priorities } from "../../helpers/variables";
-
-// const categories = [
-//   "Art",
-//   "Music",
-//   "Business",
-//   "Conference",
-//   "Workshop",
-//   "Party",
-//   "Sport",
-// ];
-
-// const priorities = [
-//   { valueName: "Low", value: 1 },
-//   { valueName: "Medium", value: 2 },
-//   { valueName: "High", value: 3 },
-// ];
+import { Field } from "formik";
 
 function CreateForm() {
   const dispatch = useDispatch();
@@ -64,7 +51,7 @@ function CreateForm() {
     time: Yup.string().required(),
     location: Yup.string().required(),
     category: Yup.string().required(),
-    picture: Yup.string().url(),
+    picture: Yup.string().url().required(),
     priority: Yup.number().required(),
   });
 
@@ -118,13 +105,17 @@ function CreateForm() {
               </Wrapper>
               <Wrapper>
                 <Label htmlFor="category">Category</Label>
-                <Input placeholder="Input" component="select" name="category">
-                  {categories.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </Input>
+                <Field name="category">
+                  {({ field, form, meta }) => (
+                    <InputSelect
+                      field={field}
+                      form={form}
+                      meta={meta}
+                      label={"Category"}
+                      options={categories}
+                    />
+                  )}
+                </Field>
                 <FormError name="category" />
               </Wrapper>
               <Wrapper>
@@ -134,14 +125,18 @@ function CreateForm() {
               </Wrapper>
               <Wrapper>
                 <Label htmlFor="priority">Priority</Label>
-                <Input placeholder="Input" component="select" name="priority">
-                  {priorities.map((item, index) => (
-                    <option key={index} value={item.value}>
-                      {item.valueName}
-                    </option>
-                  ))}
-                </Input>
-                <FormError name="category" />
+                <Field name="priority">
+                  {({ field, form, meta }) => (
+                    <InputSelect
+                      field={field}
+                      form={form}
+                      meta={meta}
+                      label={"Priority"}
+                      options={priorities}
+                    />
+                  )}
+                </Field>
+                <FormError name="priority" />
               </Wrapper>
             </>
           )}
@@ -150,12 +145,13 @@ function CreateForm() {
               <div>
                 <Wrapper>
                   <Label htmlFor="title">Title</Label>
-                  <Input placeholder="Input" name="title" />
+                  <Input id="title" placeholder="Input" name="title" />
                   <FormError name="title" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="description">Description</Label>
                   <Textarea
+                    id="description"
                     placeholder="Input"
                     component="textarea"
                     name="description"
@@ -164,47 +160,58 @@ function CreateForm() {
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="date">Input date</Label>
-                  <Input placeholder="Input" name="date" />
+                  <Input id="date" placeholder="Input" name="date" />
                   <FormError name="date" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="time">Input time</Label>
-                  <Input placeholder="Input" name="time" />
+                  <Input id="time" placeholder="Input" name="time" />
                   <FormError name="time" />
                 </Wrapper>
               </div>
               <div>
                 <Wrapper>
                   <Label htmlFor="location">Location</Label>
-                  <Input placeholder="Input" name="location" />
+                  <Input id="location" placeholder="Input" name="location" />
                   <FormError name="location" />
                 </Wrapper>
+
                 <Wrapper>
                   <Label htmlFor="category">Category</Label>
-                  <Input placeholder="Input" component="select" name="category">
-                    {categories.map((item, index) => (
-                      <option key={index} value={item}>
-                        {item}
-                      </option>
-                    ))}
-                  </Input>
+                  <Field id="category" name="category">
+                    {({ field, form, meta }) => (
+                      <InputSelect
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Category"}
+                        options={categories}
+                      />
+                    )}
+                  </Field>
                   <FormError name="category" />
                 </Wrapper>
+
                 <Wrapper>
                   <Label htmlFor="picture">Add picture</Label>
-                  <Input placeholder="Input" name="picture" />
+                  <Input id="picture" placeholder="Input" name="picture" />
                   <FormError name="picture" />
                 </Wrapper>
+
                 <Wrapper>
                   <Label htmlFor="priority">Priority</Label>
-                  <Input placeholder="Input" component="select" name="priority">
-                    {priorities.map((item, index) => (
-                      <option key={index} value={item.value}>
-                        {item.valueName}
-                      </option>
-                    ))}
-                  </Input>
-                  <FormError name="category" />
+                  <Field id="priority" name="priority">
+                    {({ field, form, meta }) => (
+                      <InputSelect
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Priority"}
+                        options={priorities}
+                      />
+                    )}
+                  </Field>
+                  <FormError name="priority" />
                 </Wrapper>
               </div>
             </>
@@ -215,12 +222,13 @@ function CreateForm() {
               <div>
                 <Wrapper>
                   <Label htmlFor="title">Title</Label>
-                  <Input placeholder="Input" name="title" />
+                  <Input id="title" placeholder="Input" name="title" />
                   <FormError name="title" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="description">Description</Label>
                   <Textarea
+                    id="description"
                     placeholder="Input"
                     component="textarea"
                     name="description"
@@ -231,47 +239,56 @@ function CreateForm() {
               <div>
                 <Wrapper>
                   <Label htmlFor="date">Input date</Label>
-                  <Input placeholder="Input" name="date" />
+                  <Input id="date" placeholder="Input" name="date" />
                   <FormError name="date" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="time">Input time</Label>
-                  <Input placeholder="Input" name="time" />
+                  <Input id="time" placeholder="Input" name="time" />
                   <FormError name="time" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="location">Location</Label>
-                  <Input placeholder="Input" name="location" />
+                  <Input id="location" placeholder="Input" name="location" />
                   <FormError name="location" />
                 </Wrapper>
               </div>
               <div>
                 <Wrapper>
                   <Label htmlFor="category">Category</Label>
-                  <Input placeholder="Input" component="select" name="category">
-                    {categories.map((item, index) => (
-                      <option key={index} value={item}>
-                        {item}
-                      </option>
-                    ))}
-                  </Input>
+                  <Field id="category" name="category">
+                    {({ field, form, meta }) => (
+                      <InputSelect
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Category"}
+                        options={categories}
+                        s
+                      />
+                    )}
+                  </Field>
                   <FormError name="category" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="picture">Add picture</Label>
-                  <Input placeholder="Input" name="picture" />
+                  <Input id="picture" placeholder="Input" name="picture" />
                   <FormError name="picture" />
                 </Wrapper>
                 <Wrapper>
                   <Label htmlFor="priority">Priority</Label>
-                  <Input placeholder="Input" component="select" name="priority">
-                    {priorities.map((item, index) => (
-                      <option key={index} value={item.value}>
-                        {item.valueName}
-                      </option>
-                    ))}
-                  </Input>
-                  <FormError name="category" />
+                  <Field id="priority" name="priority">
+                    {({ field, form, meta }) => (
+                      <InputSelect
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Priority"}
+                        options={priorities}
+                      />
+                    )}
+                  </Field>
+                  <FormError name="priority" />
                 </Wrapper>
               </div>
             </>

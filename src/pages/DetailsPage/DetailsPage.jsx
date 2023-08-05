@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import GoBackBtn from "../../components/GoBackBtn/GoBackBtn";
 import DetailsBox from "../../components/DetailsBox/DetailsBox";
 import Loader from "../../components/Loader/Loader";
 import { TitleDetails, Wrap } from "./DetailsPage.styled.js";
 import { priorities } from "../../helpers/variables";
+//
 
 function DetailsPage() {
+  const navigate = useNavigate();
   const [eventDetails, setEventDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const locationState = useLocation();
@@ -15,8 +17,13 @@ function DetailsPage() {
 
   const fetchEvent = async (id) => {
     setIsLoading(true);
-    const { data } = await axios.get(id);
-    setEventDetails(data);
+    try {
+      const { data } = await axios.get(id);
+      setEventDetails(data);
+    } catch (error) {
+      navigate("/");
+    }
+
     setIsLoading(false);
   };
 

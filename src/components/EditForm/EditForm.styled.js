@@ -110,6 +110,10 @@ export const Btn = styled.button`
     background-color: ${(p) => p.theme.colors.hover};
   }
 
+  @media ${device.phabletAndMobileOnly} {
+    width: 100%;
+  }
+
   @media ${device.tablet} {
     position: absolute;
     right: 24px;
