@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "title": "Galery Opening",
+    "date": "23.08",
+    "time": "17:00",
+    "location": "Odessa",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference.",
+    "category": "Art",
+    "priority": 1,
+    "picture": "https://img.freepik.com/free-photo/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai_188544-9806.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Leadership Conference",
+    "date": "12.07 ",
+    "time": "12:00",
+    "location": "Kyiv",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference.",
+    "category": "Art",
+    "priority": 1,
+    "picture": "https://img.freepik.com/premium-photo/a-painting-of-a-tree-with-the-colors-of-the-rainbow_881695-1479.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Leadership Conference",
+    "date": "12.07 ",
+    "time": "12:00",
+    "location": "Kyiv",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference.",
+    "category": "Art",
+    "priority": 2,
+    "picture": "https://img.freepik.com/premium-photo/a-painting-of-a-tree-with-the-colors-of-the-rainbow_881695-1479.jpg"
+  },
+  {
+    "title": "Summer Soiree",
+    "description": "Embrace the tropical vibes and escape to paradise at our Beach Luau Extravaganza.",
+    "date": "28.08",
+    "id": "7",
+    "time": "12:00",
+    "location": "Odessa",
+    "category": "Party",
+    "picture": "https://www.stihi.in.ua/images/forpoems/48633_678ffca6051c3f5f8825009c458f81e5.jpg",
+    "priority": 3
+  },
+  {
+    "title": "Innovation Summit",
+    "description": "Engage in a thought-provoking journey of knowledge and collaboration at our Innovation Summit. ",
+    "date": "23.08",
+    "id": "8",
+    "time": "13:00",
+    "location": "Odessa",
+    "category": "Conference",
+    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREZCnfRTuhkvMdpSRc5IfYCrgwQKpMV2qF3w&usqp=CAU",
+    "priority": 3
+  },
+  {
+    "title": "Acoustic Garden Concert",
+    "description": "Experience the magic of live music amidst the serene beauty of nature at our Acoustic Garden Concert.",
+    "date": "14.08",
+    "id": "9",
+    "time": "17:00",
+    "location": "Odessa",
+    "category": "Music",
+    "picture": "https://www.scottishmusicnetwork.co.uk/wp-content/uploads/2022/08/tinyconnect-e1661726733517-675x360.jpg",
+    "priority": 2
+  },
+  {
+    "title": "Tech Startup Showcase",
+    "description": "Witness the future of technology as innovative startups showcase their groundbreaking ideas.",
+    "date": "12.08",
+    "id": "10",
+    "time": "13:00",
+    "location": "Odessa",
+    "category": "Workshop",
+    "picture": "https://www.fairfield.edu/news/images/2023/april/04-21-23_image_startup-showcase-recap.jpg",
+    "priority": 1
+  },
+  {
+    "title": "Tech Startup Showcase",
+    "description": "Witness the future of technology as innovative startups showcase their groundbreaking ideas.",
+    "date": "12.08",
+    "id": "12",
+    "time": "16:00",
+    "location": "Odessa",
+    "category": "Workshop",
+    "picture": "https://www.fairfield.edu/news/images/2023/april/04-21-23_image_startup-showcase-recap.jpg",
+    "priority": 3
+  }
+]
