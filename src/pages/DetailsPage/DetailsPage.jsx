@@ -11,12 +11,11 @@ import { priorities } from "../../helpers/variables";
 function DetailsPage() {
   const navigate = useNavigate();
   const [eventDetails, setEventDetails] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const locationState = useLocation();
   const { eventId } = useParams();
 
   const fetchEvent = async (id) => {
-    setIsLoading(true);
     try {
       const { data } = await axios.get(id);
       setEventDetails(data);

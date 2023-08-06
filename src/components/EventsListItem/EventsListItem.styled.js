@@ -33,7 +33,8 @@ export const DateText = styled.div`
   justify-content: space-between;
   color: ${(p) => p.theme.colors.text.accent};
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 16px 8px;
+  line-height: 1.77;
+  padding: 8px 16px;
   width: 100%;
   position: absolute;
   left: 0;

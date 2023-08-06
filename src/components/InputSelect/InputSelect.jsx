@@ -19,7 +19,8 @@ function InputSelect({
   meta,
   ...props
 }) {
-  const [selectValue, setSelectValue] = useState("");
+  const formValue = field.value ? field.value : "";
+  const [selectValue, setSelectValue] = useState(formValue);
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef(null);
 

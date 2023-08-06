@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Calendar from "react-calendar";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import useOutsideClick from "../../hooks/useOutsideHook";
 import {
   Wrap,
@@ -24,8 +24,9 @@ function InputDate({
   meta,
   ...props
 }) {
-  const [value, setValue] = useState(null);
-  const [changeValue, setChangeValue] = useState(null);
+  const formValue = field.value ? parseISO(field.value) : null;
+  const [value, setValue] = useState(formValue);
+  const [changeValue, setChangeValue] = useState(formValue);
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef(null);
 
@@ -45,8 +46,6 @@ function InputDate({
 
   const onChoose = (value) => {
     setValue(value);
-    console.log(form.values[field.name]);
-    console.log(value);
     togglePopup();
 
     form.setFieldValue(field.name, value);

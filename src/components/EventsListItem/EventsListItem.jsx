@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 import {
   Card,
   ImgWrap,
@@ -26,6 +27,8 @@ function EventsListItem({
   path,
   locationState,
 }) {
+  const dateOnTimeFormat = new Date(date);
+  const formatedDate = format(dateOnTimeFormat, "dd.MM");
   return (
     <Card>
       <ImgWrap style={{ backgroundImage: `url(${picture})` }}>
@@ -35,7 +38,7 @@ function EventsListItem({
         </Labels>
         <DateText>
           <div>
-            {date} at {time}
+            {formatedDate} at {time}
           </div>
           <p>{location}</p>
         </DateText>

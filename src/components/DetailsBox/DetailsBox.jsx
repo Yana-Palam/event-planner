@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeEvent } from "../../redux/events/eventsOperations";
 import useOutsideClick from "../../hooks/useOutsideHook";
-
+import { format } from "date-fns";
 import {
   Box,
   Image,
@@ -52,6 +52,9 @@ function DetailsBox({
     navigate("/");
   };
 
+  const dateOnTimeFormat = new Date(date);
+  const formatedDate = format(dateOnTimeFormat, "dd.MM");
+
   return (
     <Box>
       <Image src={`${picture}`} alt={`${title}`} />
@@ -62,7 +65,7 @@ function DetailsBox({
           <Label $priority={`${priority}`}>{priorityName}</Label>
           <Label>{location}</Label>
           <Label>
-            {date} at {time}
+            {formatedDate} at {time}
           </Label>
         </LabelsWrap>
         <BtnWrap>
