@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+**Читати іншою мовою: [Українська](README.md), [English](README.en.md).**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Events planner</h1>
 
-## Available Scripts
+[![Repository Size](https://img.shields.io/github/repo-size/Yana-Palam/event-planner?style=<style>&color=<color>)](https://github.com/Yana-Palam/event-planner)
+![GitHub watchers](https://img.shields.io/github/watchers/Yana-Palam/event-planner?style=social)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Yana-Palam/event-planner)
+![GitHub language count](https://img.shields.io/github/languages/count/Yana-Palam/event-planner)
+![GitHub top language](https://img.shields.io/github/languages/top/Yana-Palam/event-planner)
 
-In the project directory, you can run:
+<h2 align="center"><a  href='https://yana-palam.github.io/event-planner/'>Жива сторінка</a></h2>
 
-### `npm start`
+<h2>Опис додатку</h2>
+<ul>
+<li>Додаток має сторінки: Home, Create, Details, Edit</li>
+<li>Сторінка Home містить картки запланованих подій</li>
+<li>На сторінці Create є форма для створення нової події</li>
+<li>На сторінці Details відображається опис обраної події</li>
+<li>Сторінка Edit надає можливість редагувати обрану подію</li>
+<li>В додатку є можливість фільтрувати картки подій за категорією</li>
+<li>Також доступне сортування подій: за назвою, за пріоритетом та за датою події</li>
+<li>На всіх сторінках є кнопка Back, яка веде на головну сторінку</li>
+<li>Якщо користувач зайшов за неіснуючим маршрутом, його перенаправляє на домашню сторінку</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h2>Стек технологій</h2>
+<ul>
+<li>JavaScript</li>
+<li>ReactJS</li>
+<li>Redux Toolkit</li>
+<li>React Router Dom</li>
+<li>React Hooks</li>
+<li>Axios</li>
+<li>Mockapi.io</li>
+<li>Styled Components</li>
+<li>Formik</li>
+</ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>Реалізація проекту</h2>
+<ul>
+<li>Проект розроблений за допомогою бібліотеки React</li>
+<li>Проект зібраний за допомогою create-react-app</li>
+<li>Використана бібліотека Redux Toolkit для управління станом</li>
+<li>Створено свій персональний бекенд для розробки за допомогою UI-сервісу mockapi.io</li>
+</ul>
