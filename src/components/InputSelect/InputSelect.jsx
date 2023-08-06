@@ -12,7 +12,7 @@ import {
 } from "./InputSelect.styled";
 
 function InputSelect({
-  field, // { name, value, onChange, onBlur }
+  field,
   form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   options,
   label,
@@ -31,7 +31,6 @@ function InputSelect({
 
   const togglePopup = () => {
     setIsOpen((prev) => !prev);
-    form.touched.categoryCustom = true;
   };
 
   const onSelect = (obj) => {

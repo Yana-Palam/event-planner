@@ -6,6 +6,7 @@ import useMatchMedia from "../../hooks/useMatchMedia";
 import { useDispatch } from "react-redux";
 import { addEvent } from "../../redux/events/eventsOperations";
 import InputSelect from "../InputSelect/InputSelect";
+import InputDate from "../InputDate/InputDate";
 // import { CrossSmall } from "react-swm-icon-pack";
 import {
   StyledForm,
@@ -47,7 +48,7 @@ function CreateForm() {
   const validationSchema = Yup.object({
     title: Yup.string().required(),
     description: Yup.string().required(),
-    date: Yup.string().required(),
+    date: Yup.date().required(),
     time: Yup.string().required(),
     location: Yup.string().required(),
     category: Yup.string().required(),
@@ -58,9 +59,9 @@ function CreateForm() {
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
 
-    dispatch(addEvent(values));
-    resetForm();
-    navigate("/");
+    // dispatch(addEvent(values));
+    // resetForm();
+    // navigate("/");
   };
 
   return (
@@ -89,7 +90,16 @@ function CreateForm() {
               </Wrapper>
               <Wrapper>
                 <Label htmlFor="date">Input date</Label>
-                <Input placeholder="Input" name="date" />
+                <Field id="date" name="date">
+                  {({ field, form, meta }) => (
+                    <InputDate
+                      field={field}
+                      form={form}
+                      meta={meta}
+                      label={"Date"}
+                    />
+                  )}
+                </Field>
                 <FormError name="date" />
               </Wrapper>
               <Wrapper>
@@ -158,11 +168,22 @@ function CreateForm() {
                   />
                   <FormError name="description" />
                 </Wrapper>
+                {/* --------------------------------- */}
                 <Wrapper>
                   <Label htmlFor="date">Input date</Label>
-                  <Input id="date" placeholder="Input" name="date" />
+                  <Field id="date" name="date">
+                    {({ field, form, meta }) => (
+                      <InputDate
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Date"}
+                      />
+                    )}
+                  </Field>
                   <FormError name="date" />
                 </Wrapper>
+
                 <Wrapper>
                   <Label htmlFor="time">Input time</Label>
                   <Input id="time" placeholder="Input" name="time" />
@@ -239,7 +260,16 @@ function CreateForm() {
               <div>
                 <Wrapper>
                   <Label htmlFor="date">Input date</Label>
-                  <Input id="date" placeholder="Input" name="date" />
+                  <Field id="date" name="date">
+                    {({ field, form, meta }) => (
+                      <InputDate
+                        field={field}
+                        form={form}
+                        meta={meta}
+                        label={"Date"}
+                      />
+                    )}
+                  </Field>
                   <FormError name="date" />
                 </Wrapper>
                 <Wrapper>
