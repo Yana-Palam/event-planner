@@ -31,7 +31,7 @@ export const eventsSlice = createSlice({
       state.error = null;
     });
     addCase(addEvent.fulfilled, (state, { payload }) => {
-      state.items = [...state.items, ...payload];
+      state.items = [...state.items, payload];
       state.isLoading = false;
       state.error = null;
     });

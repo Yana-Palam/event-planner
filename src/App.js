@@ -52,7 +52,7 @@ function App() {
             ),
           },
           {
-            path: "*",
+            path: "/*",
             element: <Navigate to="/" replace />,
           },
         ],
