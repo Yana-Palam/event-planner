@@ -13,14 +13,33 @@ export const StyledForm = styled.div`
   box-shadow: ${(p) => p.theme.boxShadow.box};
 
   @media ${device.tablet} {
-    padding: 40px 24px 136px;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 24px;
+    padding: 40px 24px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 656px;
+
+    gap: 20px 24px;
   }
   @media ${device.desktop} {
     padding: 40px 40px 170px;
-    grid-template-columns: repeat(3, 1fr);
+    height: 490px;
+    column-gap: 42px;
+  }
+`;
+
+export const Wrapper = styled.div`
+  position: relative;
+
+  @media ${device.phabletAndMobileOnly} {
+    margin-bottom: 20px;
+  }
+
+  @media ${device.tablet} {
+    width: 308px;
+  }
+  @media ${device.desktop} {
+    width: 372px;
   }
 `;
 
@@ -66,30 +85,12 @@ export const Textarea = styled(Input)`
   min-height: 156px;
 `;
 
-export const Select = styled(Input)`
-  /* position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 24px;
-    width: 24px;
-    color: red;
-    /* background-image: url(${ChevronSmallDown}); 
-  } */
-`;
-
 export const ErrorText = styled.p`
   position: absolute;
   color: ${(p) => p.theme.colors.form.error};
   font-size: 12px;
   right: 19px;
   margin-top: 4px;
-`;
-export const Wrapper = styled.div`
-  position: relative;
-  margin-bottom: 20px;
 `;
 
 export const Btn = styled.button`
@@ -112,6 +113,7 @@ export const Btn = styled.button`
 
   @media ${device.phabletAndMobileOnly} {
     width: 100%;
+    margin-top: 40px;
   }
 
   @media ${device.tablet} {

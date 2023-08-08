@@ -29,15 +29,16 @@ function EditForm() {
   }, []);
 
   const onSubmit = async (values, { resetForm }) => {
-    const event = { ...values, id: eventDetails.id };
-    try {
-      await axios.put(`/${event.id}`, event);
-      resetForm();
-    } catch (error) {
-      navigate(location?.state?.from ?? "/");
-    }
+    console.log(values);
+    // const event = { ...values, id: eventDetails.id };
+    // try {
+    //   await axios.put(`/${event.id}`, event);
+    //   resetForm();
+    // } catch (error) {
+    //   navigate(location?.state?.from ?? "/");
+    // }
 
-    navigate(location?.state?.from ?? "/");
+    // navigate(location?.state?.from ?? "/");
   };
 
   return (

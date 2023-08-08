@@ -1,23 +1,17 @@
 export const theme = {
   colors: {
     white: "#ffffff",
-    // black: "#000000",
-    // whiteAlpha: "#ffffff60",
     accent: "#7B61FF",
     hover: "#6243FF",
     primaryBackground: "#FEFCFF",
-
     popupBorder: "#aca7c3",
 
     text: {
       title: "#3F3F3F",
       cardTitle: "#1C1B1F",
       cardText: "#49454F",
-      // primaryText: "#111321",
-      // secondaryText: "#111111",
       accent: "#7B61FF",
       placeholder: "#888888",
-      // dataText: "rgba(17, 17, 17, 0.6)",
       popup: "#aca7c3",
       high: "#FF2B77",
       medium: "#E2A300",
@@ -25,6 +19,7 @@ export const theme = {
     },
 
     form: {
+      text: "#ACA7C3",
       border: "#aca7c3",
       label: "#7B61FF",
       input: "#3F3F3F",
@@ -37,9 +32,6 @@ export const theme = {
   fonts: {
     logo: "Alata, sans-serif",
     body: "Poppins, sans-serif",
-    // heading: 'Gotham Pro, sans-serif',
-    // main: "Manrope, sans-serif",
-    // forminput: "Inter, sans-serif",
   },
 
   textTransform: {
@@ -61,8 +53,6 @@ export const theme = {
   },
 
   fontWeights: {
-    // thin: 100,
-    // extraLight: 200,
     light: 300,
     normal: 400,
     medium: 500,
@@ -94,7 +84,7 @@ export const theme = {
   borders: {
     none: "none",
     thin: "1px solid",
-    // normal: "2px solid",
+    normal: "2px solid",
   },
 
   radii: {
@@ -115,6 +105,4 @@ export const theme = {
   animation: {
     cubic: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
   },
-
-  breakpoints: ["320px", "480px", "768px", "1200px"],
 };

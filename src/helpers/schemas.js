@@ -4,7 +4,7 @@ export const validationSchema = Yup.object({
   title: Yup.string()
     .trim()
     .max(30)
-    .matches(/^(?!.*([A-Za-z])\1{3,})[A-Za-zА-Яа-я0-9\s]+$/, "Invalid input")
+    .matches(/^(?!.*([A-Za-z])\1{3,})[A-Za-z0-9\s]+$/, "Invalid input")
     .required(),
   description: Yup.string()
     .trim()
@@ -16,7 +16,7 @@ export const validationSchema = Yup.object({
   location: Yup.string()
     .trim()
     .max(20)
-    .matches(/^(?!.*([A-Za-z])\1{3,})[A-Za-zА-Яа-я\s]+$/, "Invalid input")
+    .matches(/^(?!.*([A-Za-z])\1{3,})[A-Za-z\s]+$/, "Invalid input")
     .required(),
   category: Yup.string()
     .trim()

@@ -16,6 +16,7 @@ const Container = styled.div`
 
   @media ${device.desktop} {
     width: 1280px;
+    padding: 0;
   }
 `;
 

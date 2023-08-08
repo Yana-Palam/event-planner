@@ -51,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
   }
 
+
 .react-calendar {
   border:none;
 font-family: Poppins, sans-serif !important;
