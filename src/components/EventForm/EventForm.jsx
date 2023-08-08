@@ -12,6 +12,7 @@ import {
   Btn,
   Wrapper,
   ErrorText,
+  ClearBtn,
 } from "./EventForm.styled";
 import { CrossSmall } from "react-swm-icon-pack";
 import { categories, priorities } from "../../helpers/variables";
@@ -24,6 +25,10 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
         render={(message) => <ErrorText>{message}</ErrorText>}
       />
     );
+  };
+
+  const onClear = (props, name) => {
+    props.setFieldValue(name, "");
   };
 
   return (
@@ -44,6 +49,14 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                   placeholder="Input"
                   name="title"
                 />
+                {props.values.title && (
+                  <ClearBtn
+                    type="button"
+                    onClick={() => onClear(props, "title")}
+                  >
+                    <CrossSmall color="#7B61FF" />
+                  </ClearBtn>
+                )}
 
                 <FormError name="title" />
               </Wrapper>
@@ -56,6 +69,14 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                   component="textarea"
                   name="description"
                 />
+                {props.values.description && (
+                  <ClearBtn
+                    type="button"
+                    onClick={() => onClear(props, "description")}
+                  >
+                    <CrossSmall color="#7B61FF" />
+                  </ClearBtn>
+                )}
                 <FormError name="description" />
               </Wrapper>
               <Wrapper>
@@ -98,6 +119,14 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                   placeholder="Input"
                   name="location"
                 />
+                {props.values.location && (
+                  <ClearBtn
+                    type="button"
+                    onClick={() => onClear(props, "location")}
+                  >
+                    <CrossSmall color="#7B61FF" />
+                  </ClearBtn>
+                )}
                 <FormError name="location" />
               </Wrapper>
 
@@ -126,6 +155,14 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                   placeholder="Input"
                   name="picture"
                 />
+                {props.values.picture && (
+                  <ClearBtn
+                    type="button"
+                    onClick={() => onClear(props, "picture")}
+                  >
+                    <CrossSmall color="#7B61FF" />
+                  </ClearBtn>
+                )}
                 <FormError name="picture" />
               </Wrapper>
 
@@ -143,6 +180,7 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                     />
                   )}
                 </Field>
+
                 <FormError name="priority" />
               </Wrapper>
 

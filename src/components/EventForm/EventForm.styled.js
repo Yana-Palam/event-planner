@@ -131,3 +131,15 @@ export const Btn = styled.button`
 `;
 
 export const StyledWrap = styled.div``;
+
+export const ClearBtn = styled.button`
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  right: 12px;
+  top: 40px;
+`;
