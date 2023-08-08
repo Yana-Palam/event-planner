@@ -38,12 +38,19 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
             <StyledForm>
               <Wrapper>
                 <Label htmlFor="title">Title</Label>
-                <Input id="title" placeholder="Input" name="title" />
+                <Input
+                  $error={props.errors.title && props.touched.title}
+                  id="title"
+                  placeholder="Input"
+                  name="title"
+                />
+
                 <FormError name="title" />
               </Wrapper>
               <Wrapper>
                 <Label htmlFor="description">Description</Label>
                 <Textarea
+                  $error={props.errors.description && props.touched.description}
                   id="description"
                   placeholder="Input"
                   component="textarea"
@@ -56,6 +63,7 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                 <Field id="date" name="date">
                   {({ field, form, meta }) => (
                     <InputDate
+                      error={props.errors.date && props.touched.date}
                       field={field}
                       form={form}
                       meta={meta}
@@ -65,16 +73,13 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                 </Field>
                 <FormError name="date" />
               </Wrapper>
-              {/* <Wrapper>
-                      <Label htmlFor="time">Input time</Label>
-                      <Input id="time" placeholder="Input" name="time" />
-                      <FormError name="time" />
-                    </Wrapper> */}
+
               <Wrapper>
                 <Label htmlFor="time">Input time</Label>
                 <Field id="time" name="time">
                   {({ field, form, meta }) => (
                     <InputTime
+                      error={props.errors.time && props.touched.time}
                       field={field}
                       form={form}
                       meta={meta}
@@ -87,7 +92,12 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
 
               <Wrapper>
                 <Label htmlFor="location">Location</Label>
-                <Input id="location" placeholder="Input" name="location" />
+                <Input
+                  $error={props.errors.location && props.touched.location}
+                  id="location"
+                  placeholder="Input"
+                  name="location"
+                />
                 <FormError name="location" />
               </Wrapper>
 
@@ -96,6 +106,7 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                 <Field id="category" name="category">
                   {({ field, form, meta }) => (
                     <InputSelect
+                      error={props.errors.category && props.touched.category}
                       field={field}
                       form={form}
                       meta={meta}
@@ -109,7 +120,12 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
 
               <Wrapper>
                 <Label htmlFor="picture">Add picture</Label>
-                <Input id="picture" placeholder="Input" name="picture" />
+                <Input
+                  $error={props.errors.picture && props.touched.picture}
+                  id="picture"
+                  placeholder="Input"
+                  name="picture"
+                />
                 <FormError name="picture" />
               </Wrapper>
 
@@ -118,6 +134,7 @@ function EventForm({ onSubmit, initialValues, isLoading = false, btnText }) {
                 <Field id="priority" name="priority">
                   {({ field, form, meta }) => (
                     <InputSelect
+                      error={props.errors.priority && props.touched.priority}
                       field={field}
                       form={form}
                       meta={meta}

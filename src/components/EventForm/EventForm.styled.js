@@ -78,6 +78,8 @@ export const Input = styled(Field)`
     line-height: ${(p) => p.theme.lineHeights.formInput};
     font-size: ${(p) => p.theme.fontSizes.s};
   }
+
+  border-color: ${(p) => p.$error && p.theme.colors.form.error};
 `;
 
 export const Textarea = styled(Input)`

@@ -16,10 +16,10 @@ function InputTime({
   form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   options,
   label,
+  error,
   meta,
   ...props
 }) {
-  // const val = field.value;
   const [value, setValue] = useState(field.value);
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef(null);
@@ -48,7 +48,7 @@ function InputTime({
   return (
     <Wrap ref={inputRef}>
       <WrapInput>
-        <Input onClick={onClickInput}>
+        <Input $error={error} onClick={onClickInput}>
           <Text $select={value}>
             {!isOpen && <>{value ? value : "Select"}</>}
             {isOpen && `Select ${label}`}

@@ -37,7 +37,6 @@ export const Input = styled.div`
   color: ${(p) => p.theme.colors.form.input};
   font-size: ${(p) => p.theme.fontSizes.s};
   font-family: inherit;
-  /* line-height: ${(p) => p.theme.lineHeights.formInput}; */
 
   &:focus {
     border-color: ${(p) => p.theme.colors.accent};

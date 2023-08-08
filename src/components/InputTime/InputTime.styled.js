@@ -33,11 +33,10 @@ export const Input = styled.div`
   outline: none;
   border-radius: ${(p) => p.theme.radii.md};
   border: ${(p) => `${p.theme.borders.thin} ${p.theme.colors.form.border}`};
-  border-color: ${(p) => p.$error && p.theme.colors.form.error};
   color: ${(p) => p.theme.colors.form.input};
   font-size: ${(p) => p.theme.fontSizes.s};
   font-family: inherit;
-  /* line-height: ${(p) => p.theme.lineHeights.formInput}; */
+  border-color: ${(p) => p.$error && p.theme.colors.form.error};
 
   &:focus {
     border-color: ${(p) => p.theme.colors.accent};

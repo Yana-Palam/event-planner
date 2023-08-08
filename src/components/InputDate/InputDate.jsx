@@ -21,6 +21,7 @@ function InputDate({
   form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   options,
   label,
+  error,
   meta,
   ...props
 }) {
@@ -54,7 +55,7 @@ function InputDate({
   return (
     <Wrap ref={inputRef}>
       <WrapInput>
-        <Input onClick={togglePopup}>
+        <Input $error={error} onClick={togglePopup}>
           <Text $select={value}>
             {!isOpen && <>{value ? format(value, "dd.MM") : "Select"}</>}
             {isOpen && `Select ${label}`}

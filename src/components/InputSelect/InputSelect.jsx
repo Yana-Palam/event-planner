@@ -17,6 +17,7 @@ function InputSelect({
   options,
   label,
   meta,
+  error,
   ...props
 }) {
   const formValue = field.value
@@ -45,7 +46,7 @@ function InputSelect({
   return (
     <Select ref={inputRef}>
       <SelectHeader>
-        <Input onClick={togglePopup}>
+        <Input $error={error} onClick={togglePopup}>
           <Text $select={selectValue}>
             {!isOpen && <>{selectValue ? selectValue : "Select"}</>}
             {isOpen && `Select ${label}`}
