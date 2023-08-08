@@ -32,7 +32,6 @@ export const TimeOptions = styled.ul`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-
   width: 48px;
   padding: 56px 0;
 
@@ -80,11 +79,9 @@ export const BtnOption = styled.button`
 export const BtnAmPm = styled.button`
   width: 100%;
   padding: 12px 16px;
-
   border: none;
   background-color: transparent;
   color: ${(p) => p.theme.colors.form.text};
-
   text-align: center;
   font-size: ${(p) => p.theme.fontSizes.s};
   font-weight: ${(p) => p.theme.fontWeights.medium};

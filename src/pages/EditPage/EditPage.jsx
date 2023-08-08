@@ -1,5 +1,4 @@
 import React from "react";
-
 import GoBackBtn from "../../components/GoBackBtn/GoBackBtn";
 import { useSelector } from "react-redux";
 import { selectIsLoading } from "../../redux/events/eventsSelectors";

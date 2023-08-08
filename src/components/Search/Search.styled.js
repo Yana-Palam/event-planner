@@ -17,7 +17,6 @@ export const InputWrap = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-
   border-radius: ${(p) => p.theme.radii.md};
   background-color: ${(p) => p.theme.colors.white};
   box-shadow: ${(p) => p.theme.boxShadow.box};
@@ -25,7 +24,6 @@ export const Input = styled.input`
   border: none;
   padding: 14px 12px 14px 48px;
   color: ${(p) => p.theme.colors.text.accent};
-
   font-family: ${(p) => p.theme.fonts.body};
 
   &::placeholder {

@@ -22,7 +22,6 @@ export const Logo = styled(Link)`
   font-family: ${(p) => p.theme.fonts.logo};
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.logo};
-
   transition: color ${(p) => p.theme.animation.cubic};
 
   &:hover {

@@ -17,15 +17,7 @@ import {
 import "react-calendar/dist/Calendar.css";
 import { ReactComponent as IconPrev } from "../../assets/images/IconPrev.svg";
 import { ReactComponent as IconNext } from "../../assets/images/IconNext.svg";
-function InputDate({
-  field,
-  form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-  options,
-  label,
-  error,
-  meta,
-  ...props
-}) {
+function InputDate({ field, form, options, label, error, meta, ...props }) {
   const formValue = field.value ? parseISO(field.value) : null;
   const [value, setValue] = useState(formValue);
   const [changeValue, setChangeValue] = useState(formValue);

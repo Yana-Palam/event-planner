@@ -11,7 +11,6 @@ import { selectSortProperty } from "../../redux/sort/sortSelectors";
 function Sort() {
   const dispatch = useDispatch();
   const isSortVal = useSelector(selectSortProperty);
-  // const sortValue = useSelector(null);
   const sortValue = useSelector((state) => state.sort);
   const [isOpen, setIsOpen] = useState(false);
   const [sort, setSort] = useState(sortValue);

@@ -11,7 +11,6 @@ export const Wrap = styled.button`
   line-height: ${(p) => p.theme.lineHeights.title};
   color: ${(p) => p.theme.colors.text.title};
   font-size: ${(p) => p.theme.fontSizes.s};
-  /* width: ${(p) => p.$sort && "202px"}; */
   font-family: inherit;
   position: absolute;
   z-index: 2;

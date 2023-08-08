@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Field } from "formik";
 import { device } from "../../utils/device";
-import { ChevronSmallDown } from "react-swm-icon-pack";
 
 export const StyledForm = styled.div`
   position: relative;
@@ -129,8 +128,6 @@ export const Btn = styled.button`
     bottom: 54px;
   }
 `;
-
-export const StyledWrap = styled.div``;
 
 export const ClearBtn = styled.button`
   position: absolute;

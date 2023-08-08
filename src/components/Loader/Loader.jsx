@@ -14,7 +14,6 @@ function Loader() {
         transform: "translateX(-50%)",
       }}
     >
-      {" "}
       <RotatingLines
         strokeColor="grey"
         strokeWidth="5"

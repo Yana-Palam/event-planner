@@ -22,7 +22,6 @@ export const Btn = styled(Link)`
 
   @media ${device.tablet} {
     padding: 16px 12px;
-
     justify-content: center;
     align-items: center;
     gap: 16px;

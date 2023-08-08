@@ -6,7 +6,6 @@ import DetailsBox from "../../components/DetailsBox/DetailsBox";
 import Loader from "../../components/Loader/Loader";
 import { TitleDetails, Wrap } from "./DetailsPage.styled.js";
 import { priorities } from "../../helpers/variables";
-//
 
 function DetailsPage() {
   const navigate = useNavigate();
@@ -28,7 +27,6 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchEvent(eventId);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

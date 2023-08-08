@@ -57,9 +57,6 @@ const GlobalStyles = createGlobalStyle`
 font-family: Poppins, sans-serif !important;
 }
 
-.react-calendar__month-view__days{
-/* color: #ACA7C3; */
-}
 
 .react-calendar button {
   font-family: Poppins, sans-serif !important;
@@ -104,9 +101,6 @@ line-height: 1.33;
 
 }
 
-/* .react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
-    background: #7B61FF;  color:#ffffff;
-} */
 
 .react-calendar__tile.react-calendar__month-view__days__day{
    color:#ACA7C3 ;

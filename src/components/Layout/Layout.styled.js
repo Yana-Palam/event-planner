@@ -4,7 +4,6 @@ import bg from "../../assets/images/bg.svg";
 
 export const StyledMain = styled.main`
   background-image: url(${bg});
-
   background-position: center;
   background-size: cover;
   min-height: 100vh;
