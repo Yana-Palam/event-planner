@@ -15,7 +15,8 @@ import {
   BtnChoose,
 } from "./InputDate.styled";
 import "react-calendar/dist/Calendar.css";
-
+import { ReactComponent as IconPrev } from "../../assets/images/IconPrev.svg";
+import { ReactComponent as IconNext } from "../../assets/images/IconNext.svg";
 function InputDate({
   field,
   form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
@@ -75,6 +76,8 @@ function InputDate({
             locale="en-EN"
             next2Label={null}
             prev2Label={null}
+            nextLabel={<IconNext />}
+            prevLabel={<IconPrev />}
             showNeighboringMonth={false}
             onChange={onChange}
             value={changeValue}

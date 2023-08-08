@@ -11,7 +11,6 @@ export const Box = styled.div`
 
 export const Image = styled.img`
   border-radius: ${(p) => p.theme.radii.md};
-  width: 100%;
   height: 168px;
   object-fit: cover;
 

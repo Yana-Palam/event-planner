@@ -57,7 +57,7 @@ function DetailsBox({
 
   return (
     <Box>
-      <Image src={`${picture}`} alt={`${title}`} />
+      <Image src={`${picture}`} alt={`${title}`} width="100%" />
       <Wrap>
         <Text>{description}</Text>
         <LabelsWrap>

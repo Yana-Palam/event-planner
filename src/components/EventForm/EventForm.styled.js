@@ -55,7 +55,7 @@ export const Label = styled.label`
 export const Input = styled(Field)`
   display: block;
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 36px 12px 16px;
   height: 56px;
   outline: none;
   border-radius: ${(p) => p.theme.radii.md};

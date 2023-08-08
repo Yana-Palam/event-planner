@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import itemImg from "../../assets/images/item.jpg";
 
 export const Card = styled.div`
   width: 100%;
@@ -14,7 +13,6 @@ export const Card = styled.div`
 `;
 
 export const ImgWrap = styled.div`
-  /* background-image: url(${itemImg}); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
