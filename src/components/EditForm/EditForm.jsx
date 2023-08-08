@@ -29,7 +29,6 @@ function EditForm() {
   }, []);
 
   const onSubmit = async (values, { resetForm }) => {
-    console.log(values);
     const event = { ...values, id: eventDetails.id };
     try {
       await axios.put(`/${event.id}`, event);

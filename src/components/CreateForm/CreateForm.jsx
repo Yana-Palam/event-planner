@@ -20,7 +20,6 @@ function CreateForm() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
     dispatch(addEvent(values));
     resetForm();
     navigate("/");
